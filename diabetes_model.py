@@ -38,18 +38,17 @@ with col2:
     Age = st.text_input('Age of the Person')
 
 # code for Prediction
-diab_diagnosis = ''
+diabetic_diagnosis = ''
 
-creating a button for Prediction
+# creating a button for Prediction
 
 if st.button('Diabetes Test Result'):
-    diab_prediction = diabetes_model.predict(
+    diabetic_prediction = diabetes_model.predict(
         [[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
-    if (diab_prediction[0] == 1):
-        diab_diagnosis = 'The person is diabetic'
+    if diabetic_prediction[0] == 1:
+        diabetic_diagnosis = 'The person is diabetic'
     else:
-        diab_diagnosis = 'The person is not diabetic'
+        diabetic_diagnosis = 'The person is not diabetic'
 
-st.success(diab_diagnosis)
-
+st.success(diabetic_diagnosis)
